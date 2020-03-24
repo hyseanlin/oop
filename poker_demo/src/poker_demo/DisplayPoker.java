@@ -31,13 +31,16 @@ public class DisplayPoker {
 
         JFrame frame=new JFrame();
         frame.setLayout(new FlowLayout());
-        frame.setSize(250, 360);
+        frame.setSize(250, 360 * 2);
         frame.setTitle(cardFilename);
         
-        JLabel lbl=new JLabel();
-        lbl.setIcon(icon);
+        JLabel lbl1=new JLabel();
+        lbl1.setIcon(icon);
+        JLabel lbl2=new JLabel();
+        lbl2.setIcon(icon);
         
-        frame.add(lbl);
+        frame.add(lbl1);
+        frame.add(lbl2);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);    	
 	}
