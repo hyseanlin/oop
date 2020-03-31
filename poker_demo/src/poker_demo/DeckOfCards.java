@@ -20,9 +20,37 @@ public class DeckOfCards {
 			System.out.println(card.getPattern() + card.getNumber());
 		}
 	}
+	
+	public void shuffle() 
+	{
+		int N = DeckOfCards.NUM_OF_CARDS;	// shuffle times
+		int i, j;	// correspond to two chosen cards to be exchanged
+		for (int k=1; k<=N; k++)
+		{
+			i = (int)(Math.random() * 51);
+			j = (int)(Math.random() * 51);
+			if (i!=j)
+			{
+				// swap two cards
+				Card temp = cards[i];
+				cards[i] = cards[j];
+				cards[j] = temp;
+				
+			} else	{
+				// skipped the swapping to next run
+				continue;
+			}
+		}
 
+	}
+	
 	public static void main(String[] args) {
 		DeckOfCards myDeck = new DeckOfCards();
+		System.out.println("Befre shuffling, the deck of cards is as follows:");
+		myDeck.displayCards();
+		// Invoke/call the method shuffle()
+		myDeck.shuffle();
+		System.out.println("After shuffling, the deck of cards is as follows:");
 		myDeck.displayCards();
 	}
 

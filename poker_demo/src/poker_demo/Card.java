@@ -2,6 +2,7 @@ package poker_demo;
 
 public class Card {
 	static String[] PATTERNS = {"club", "diamon", "heart", "spade"};
+	
 	int pid;	// index of the pattern, ranging from 0-3
 	int number;	// number of the card, ranging from 1-13
 
