@@ -33,6 +33,34 @@ public class Card {
 		return Math.floorMod(fid-1, 13)+1;
 	}
 	
+	public Card()
+	{
+		this.pid = 0;
+		this.number = 0;
+	}
+	
+	public Card(int pid, int number)
+	{
+		this.pid = pid;
+		this.number = number;
+	}
+	
+	public Card(int fid)
+	{
+		this.pid = Card.getPatternID(fid);
+		this.number = Card.getNumber(fid);
+	}
+	
+	public String getPattern()
+	{
+		return Card.PATTERNS[this.pid];
+	}
+
+	public int getNumber()
+	{
+		return this.number;
+	}
+	
 	public static void main(String[] args)
 	{
 		int pid, number, fid;
