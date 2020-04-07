@@ -28,7 +28,7 @@ public class FiveCardStudGame {
 		dealer.displayCards();
 		for (int i=0; i<NUM_OF_PLAYERS; i++)
 		{
-			System.out.println("Player " + (i+1) + "'s cards:");
+			System.out.println("Player " + players[i].name + "'s cards:");
 			players[i].displayCards();
 		}
 	}
