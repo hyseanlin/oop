@@ -11,7 +11,17 @@ public class DeckOfCards {
 			cards[i-1] = new Card(i);
 		}
 	}
-	
+
+	public DeckOfCards(boolean is_shuffle)
+	{
+		for (int i=1; i<=DeckOfCards.NUM_OF_CARDS; i++)
+		{
+			cards[i-1] = new Card(i);
+		}
+		if (is_shuffle)
+			this.shuffle();
+	}
+
 	public void displayCards()
 	{
 		for (int i=0; i<DeckOfCards.NUM_OF_CARDS; i++)
