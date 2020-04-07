@@ -1,32 +1,48 @@
 package poker_demo;
 
+import java.util.LinkedList;
+
 public class DeckOfCards {
 	static int NUM_OF_CARDS = 52;
-	Card[] cards = new Card[DeckOfCards.NUM_OF_CARDS];	// it stores 52 cards
+
+	private LinkedList<Card> cardList;
 	
-	public DeckOfCards()
-	{
-		for (int i=1; i<=DeckOfCards.NUM_OF_CARDS; i++)
+	public DeckOfCards() {
+		cardList = new LinkedList<Card>();
+		for (int i=1; i<=NUM_OF_CARDS; i++)
 		{
-			cards[i-1] = new Card(i);
+			this.put(new Card(i));
 		}
 	}
 
 	public DeckOfCards(boolean is_shuffle)
 	{
-		for (int i=1; i<=DeckOfCards.NUM_OF_CARDS; i++)
+		cardList = new LinkedList<Card>();
+		for (int i=0; i<NUM_OF_CARDS; i++)
 		{
-			cards[i-1] = new Card(i);
+			this.put(new Card(i+1));
 		}
 		if (is_shuffle)
 			this.shuffle();
 	}
+	
+	public void put(Card card) {
+		cardList.addFirst(card);
+	}
+	
+	public Card get() {
+		return cardList.removeLast();
+	}
+	
+	public int cardCount() {
+		return cardList.size();
+	}
 
 	public void displayCards()
 	{
-		for (int i=0; i<DeckOfCards.NUM_OF_CARDS; i++)
+		for (int i=0; i<cardList.size(); i++)
 		{
-			Card card = cards[i];
+			Card card = cardList.get(i);
 			System.out.println(card.getPattern() + card.getNumber());
 		}
 	}
@@ -41,10 +57,10 @@ public class DeckOfCards {
 			j = (int)(Math.random() * 51);
 			if (i!=j)
 			{
-				// swap two cards
-				Card temp = cards[i];
-				cards[i] = cards[j];
-				cards[j] = temp;
+				// swap two cards in the card list
+				Card temp = cardList.get(i);
+				cardList.set(i, cardList.get(j));
+				cardList.set(j, temp);
 				
 			} else	{
 				// skipped the swapping to next run
