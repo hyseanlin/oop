@@ -43,7 +43,12 @@ public class Player extends Person {
 			Card card = cardList.get(i);
 			System.out.println(card.getPattern() + card.getNumber());
 		}
-	}	
+	}
+	
+	public LinkedList<Card> showHand()
+	{
+		return this.cardList;
+	}
 
 	public static void main(String[] args) {
 		Player player = new Player("Sean", 'M', 45);
