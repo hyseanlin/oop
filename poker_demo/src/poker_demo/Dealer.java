@@ -37,7 +37,8 @@ public class Dealer extends Person {
 	}
 	
 	public void displayCards() {
-		System.out.println("Dealer " + this.name + "'s cards:");		
+		System.out.println("Dealer " + this.name + "'s cards (" + 
+							this.cardCount() + " in total):");		
 		deck.displayCards();
 	}
 

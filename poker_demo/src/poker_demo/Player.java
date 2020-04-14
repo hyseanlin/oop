@@ -37,7 +37,7 @@ public class Player extends Person {
 	public void displayCards()
 	{
 		System.out.println("The player " + this.name + 
-				"'s cards are listed as follows:");
+				"'s cards are listed as follows (" + this.cardCount() + " in total):");
 		for (int i=0; i<cardList.size(); i++)
 		{
 			Card card = cardList.get(i);
