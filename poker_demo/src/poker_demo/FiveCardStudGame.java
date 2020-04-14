@@ -24,12 +24,13 @@ public class FiveCardStudGame {
 	}
 	
 	public void displayCards() {
-		System.out.println("Dealer's cards:");
 		dealer.displayCards();
+		System.out.println();
+
 		for (int i=0; i<NUM_OF_PLAYERS; i++)
 		{
-			System.out.println("Player " + players[i].name + "'s cards:");
 			players[i].displayCards();
+			System.out.println();
 		}
 	}
 	

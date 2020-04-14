@@ -3,7 +3,7 @@ package poker_demo;
 public class Person {
 	
 	public String name="";
-	public char gender='M';	// F: femal, M: male
+	public char gender='M';	// F: female, M: male
 	public int age=0;
 	
 	public Person() {
@@ -16,6 +16,10 @@ public class Person {
 		this.name = name;
 		this.gender = gender;
 		this.age = age;
+	}
+	
+	public void displayCards() {
+		
 	}
 
 	public static void main(String[] args) {
