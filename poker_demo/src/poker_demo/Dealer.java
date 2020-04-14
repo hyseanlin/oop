@@ -1,7 +1,7 @@
 package poker_demo;
 
 public class Dealer extends Person {
-	private DeckOfCards deck = new DeckOfCards(true);
+	private Deck deck = new Deck(true);
 	
 	public Dealer() {
 		super();

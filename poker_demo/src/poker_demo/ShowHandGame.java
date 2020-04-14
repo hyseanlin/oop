@@ -2,12 +2,12 @@ package poker_demo;
 
 import java.util.LinkedList;
 
-public class FiveCardStudGame {
+public class ShowHandGame {
 	final static int NUM_OF_PLAYERS = 5;
 	Dealer dealer = new Dealer();
 	Player[] players = new Player[NUM_OF_PLAYERS]; 
 	
-	public FiveCardStudGame() {
+	public ShowHandGame() {
 		for (int i=0; i<NUM_OF_PLAYERS; i++)
 		{		
 			players[i] = new Player();
@@ -151,7 +151,7 @@ public class FiveCardStudGame {
 	}
 	
 	public static void main(String[] args) {
-		FiveCardStudGame myGame = new FiveCardStudGame();
+		ShowHandGame myGame = new ShowHandGame();
 		myGame.start();
 		myGame.displayCards();
 		myGame.showdown();
