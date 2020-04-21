@@ -61,6 +61,10 @@ public class Card {
 	{
 		return this.number;
 	}
+	public int getSuitID()
+	{
+		return this.suit_id;
+	}
 	
 	public static void main(String[] args)
 	{
