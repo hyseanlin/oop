@@ -1,7 +1,12 @@
 package poker_demo;
 
+
 public class Card {
-	static String[] SUITS = {"club", "diamon", "heart", "spade"};
+	 public static String[] SUITS = {
+			 "\u2660", // club 
+			 "\u2764", // heart
+			 "\u2666", // diamond
+			 "\u2663"};// spades
 	
 	int suit_id;	// index of the pattern, ranging from 0-3
 	int number;	// number of the card, ranging from 1-13
@@ -68,11 +73,13 @@ public class Card {
 	
 	public static void main(String[] args)
 	{
+		String suit;
 		int suit_id, number, fid;
-		suit_id = 2;
+		suit_id = 3;
 		number = 13;
 		fid = Card.getFileID(suit_id, number);
-		System.out.println("Given pattern index: " + suit_id + ", number: " + number + ", its file id: " + fid);
+		suit = Card.SUITS[suit_id];
+		System.out.println("Given pattern index: " + suit_id + suit + ", number: " + number + ", its file id: " + fid);
 		
 		suit_id = Card.getSuitID(fid);
 		System.out.println("Given file id: " + fid + ", we have pid: " + suit_id);

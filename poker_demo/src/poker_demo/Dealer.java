@@ -11,10 +11,13 @@ public class Dealer extends Person {
 		super(name, gender, age);
 	}
 
-	public void deal(Player p)
+	public void deal(Player p, int count)
 	{
-		Card card = deck.get();	// Remove one card from the deck(cardList)
-		p.put(card); // Deal the card to the specified player
+		for (int i=0; i<count && count <= deck.cardCount(); i++)
+		{
+			Card card = deck.get();	// Remove one card from the deck(cardList)
+			p.put(card); // Deal the card to the specified player
+		}
 	}
 	
 	public void recycle(Player p)
@@ -58,9 +61,7 @@ public class Dealer extends Person {
 		p2.displayCards();
 		d.displayCards();
 		
-		d.deal(p1);
-		d.deal(p1);
-		d.deal(p2);
+		d.deal(p1, 3);
 		p1.displayCards();
 		p2.displayCards();
 		d.displayCards();
