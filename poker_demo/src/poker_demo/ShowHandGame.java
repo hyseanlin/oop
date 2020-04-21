@@ -169,6 +169,41 @@ public class ShowHandGame {
 		}
 	}
 	
+	public void displayResult(LinkedList<Card> cards)
+	{
+		if (this.isFullHouse(cards)) {
+			System.out.println("There is a full house");
+		} else if (this.isSinglePair(cards))
+		{
+			System.out.println("There is a pair");
+		} else if (this.isTwoPair(cards))
+		{
+			System.out.println("There is a two pair");
+		} else if (this.isThreeOfAKind(cards))
+		{
+			System.out.println("There is a three of a kind");
+		} else if (this.isFourOfAKind(cards))
+		{
+			System.out.println("There is a four of a kind");
+		} else if (this.isRoyalFlush(cards))
+		{
+			System.out.println("There is a royal flush");
+		} else if (this.isStraightFlush(cards))
+		{
+			System.out.println("There is a straight flush");
+		} else if (this.isStraight(cards)) 
+		{
+			System.out.println("There is a straight");
+		} else if (this.isFlush(cards))
+		{
+			System.out.println("There is a flush");
+
+		} else
+		{
+			System.out.println("There is no hands");
+		}
+	}
+	
 	public void showdown()
 	{
 		System.out.println("======================================");
@@ -177,92 +212,38 @@ public class ShowHandGame {
 		for (int i=0; i<NUM_OF_PLAYERS; i++)
 		{
 			players[i].displayCards();
-			LinkedList<Card> cards = players[i].showHand();
-			if (this.isFullHouse(cards)) {
-				System.out.println("There is a full house");
-			} else if (this.isSinglePair(cards))
-			{
-				System.out.println("There is a pair");
-			} else if (this.isTwoPair(cards))
-			{
-				System.out.println("There is a two pair");
-			} else if (this.isThreeOfAKind(cards))
-			{
-				System.out.println("There is a three of a kind");
-			} else if (this.isFourOfAKind(cards))
-			{
-				System.out.println("There is a four of a kind");
-			} else if (this.isRoyalFlush(cards))
-			{
-				System.out.println("There is a royal flush");
-			} else if (this.isStraightFlush(cards))
-			{
-				System.out.println("There is a straight flush");
-			} else if (this.isStraight(cards)) 
-			{
-				System.out.println("There is a straight");
-			} else if (this.isFlush(cards))
-			{
-				System.out.println("There is a flush");
-
-			} else
-			{
-				System.out.println("There is no hands");
-			}
+			this.displayResult(players[i].showHand());
 		}
 	}
 	
 	public static void main(String[] args) {
 		ShowHandGame myGame = new ShowHandGame();
-		myGame.start();
-		myGame.displayCards();
-		myGame.showdown();
+		//myGame.start();
+		//myGame.displayCards();
+		//myGame.showdown();
 		
 		
 		Dealer d = new Dealer();
 		Player p = new Player("Tester", 'M', 42);
 		d.shuffle();			
 		d.deal(p, 5);
-		while (!myGame.isStraightFlush(p.showHand())) {
+		
+		while (!myGame.isStraight(p.showHand())) {
 			d.recycleAll(p);
 			d.shuffle();
 			d.deal(p, 5);
 		}
 		p.displayCards();
+		myGame.displayResult(p.showHand());
 
-
-		LinkedList<Card> cards = p.showHand();
-		if (myGame.isFullHouse(cards)) {
-			System.out.println("There is a full house");
-		} else if (myGame.isSinglePair(cards))
-		{
-			System.out.println("There is a pair");
-		} else if (myGame.isTwoPair(cards))
-		{
-			System.out.println("There is a two pair");
-		} else if (myGame.isThreeOfAKind(cards))
-		{
-			System.out.println("There is a three of a kind");
-		} else if (myGame.isFourOfAKind(cards))
-		{
-			System.out.println("There is a four of a kind");
-		} else if (myGame.isRoyalFlush(cards))
-		{
-			System.out.println("There is a royal flush");
-		} else if (myGame.isStraightFlush(cards))
-		{
-			System.out.println("There is a straight flush");
-		} else if (myGame.isStraight(cards)) 
-		{
-			System.out.println("There is a straight");
-		} else if (myGame.isFlush(cards))
-		{
-			System.out.println("There is a flush");
-
-		} else
-		{
-			System.out.println("There is no hands");
+		while (!myGame.isRoyalFlush(p.showHand())) {
+			d.recycleAll(p);
+			d.shuffle();
+			d.deal(p, 5);
 		}
+		p.displayCards();
+		myGame.displayResult(p.showHand());
+
 	}
 
 }
