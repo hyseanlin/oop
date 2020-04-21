@@ -4,7 +4,7 @@ package poker_demo;
 public class Card {
 	 public static String[] SUITS = {
 			 "\u2660", // club 
-			 "\u2764", // heart
+			 "\u2665", // heart
 			 "\u2666", // diamond
 			 "\u2663"};// spades
 	
@@ -65,6 +65,28 @@ public class Card {
 	public int getRank()
 	{
 		return this.number;
+	}
+	public String getRankStr()
+	{
+		String s;
+		switch (this.number)
+		{
+		case 11:
+			s = "J";
+			break;
+		case 12:
+			s = "Q";
+			break;
+		case 13:
+			s = "K";
+			break;
+		case 1:
+			s = "A";
+			break;
+		default:
+			s = String.valueOf(this.number);
+		}
+		return s;
 	}
 	public int getSuitID()
 	{

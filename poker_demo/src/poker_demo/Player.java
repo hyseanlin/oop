@@ -41,7 +41,7 @@ public class Player extends Person {
 		for (int i=0; i<cardList.size(); i++)
 		{
 			Card card = cardList.get(i);
-			System.out.println(card.getSuit() + card.getRank());
+			System.out.println(card.getSuit() + card.getRankStr());
 		}
 	}
 	

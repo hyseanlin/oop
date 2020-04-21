@@ -214,14 +214,16 @@ public class ShowHandGame {
 	
 	public static void main(String[] args) {
 		ShowHandGame myGame = new ShowHandGame();
-//		myGame.start();
-//		myGame.displayCards();
-//		myGame.showdown();
+		myGame.start();
+		myGame.displayCards();
+		myGame.showdown();
+		
+		
 		Dealer d = new Dealer();
 		Player p = new Player("Tester", 'M', 42);
 		d.shuffle();			
 		d.deal(p, 5);
-		while (!myGame.isTwoPair(p.showHand())) {
+		while (!myGame.isStraightFlush(p.showHand())) {
 			d.recycleAll(p);
 			d.shuffle();
 			d.deal(p, 5);
