@@ -2,12 +2,12 @@ package poker_demo;
 
 import java.util.LinkedList;
 
-public class DeckOfCards {
+public class Deck {
 	static int NUM_OF_CARDS = 52;
 
 	private LinkedList<Card> cardList;
 	
-	public DeckOfCards() {
+	public Deck() {
 		cardList = new LinkedList<Card>();
 		for (int i=1; i<=NUM_OF_CARDS; i++)
 		{
@@ -15,7 +15,7 @@ public class DeckOfCards {
 		}
 	}
 
-	public DeckOfCards(boolean is_shuffle)
+	public Deck(boolean is_shuffle)
 	{
 		cardList = new LinkedList<Card>();
 		for (int i=0; i<NUM_OF_CARDS; i++)
@@ -43,13 +43,13 @@ public class DeckOfCards {
 		for (int i=0; i<cardList.size(); i++)
 		{
 			Card card = cardList.get(i);
-			System.out.println(card.getPattern() + card.getNumber());
+			System.out.println(card.getSuit() + card.getRankStr());
 		}
 	}
 	
 	public void shuffle() 
 	{
-		int N = DeckOfCards.NUM_OF_CARDS;	// shuffle times
+		int N = Deck.NUM_OF_CARDS;	// shuffle times
 		int i, j;	// correspond to two chosen cards to be exchanged
 		for (int k=1; k<=N; k++)
 		{
@@ -71,7 +71,7 @@ public class DeckOfCards {
 	}
 	
 	public static void main(String[] args) {
-		DeckOfCards myDeck = new DeckOfCards();
+		Deck myDeck = new Deck();
 		System.out.println("Befre shuffling, the deck of cards is as follows:");
 		myDeck.displayCards();
 		// Invoke/call the method shuffle()
