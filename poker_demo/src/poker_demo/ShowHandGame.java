@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class ShowHandGame {
+public class ShowHandGame implements DisplayCards {
 	final static int NUM_OF_PLAYERS = 5;
 	Dealer dealer = new Dealer();
 	Player[] players = new Player[NUM_OF_PLAYERS]; 
@@ -91,7 +91,7 @@ public class ShowHandGame {
 	public boolean isFlush(LinkedList<Card> cards)
 	{
 		// Construct a suit histogram
-		int[] suitHist = new int[13];
+		int[] suitHist = new int[4];
 		Arrays.fill(suitHist, 0);
 		/* Iterate through the linked-list cards and
 		 * accumulate the rank histogram suitHist 
@@ -135,10 +135,9 @@ public class ShowHandGame {
 		}
 	}
 	
-
 	public boolean isStraightFlush(LinkedList<Card> cards)
 	{		
-		return isStraight(cards) && this.isFlush(cards);
+		return this.isStraight(cards) && this.isFlush(cards);
 	}
 
 	public boolean hasRank(LinkedList<Card> cards, int rank)
@@ -155,9 +154,11 @@ public class ShowHandGame {
 	
 	public boolean isRoyalFlush(LinkedList<Card> cards)
 	{			
-		return this.isStraightFlush(cards) && this.hasRank(cards, 13) && this.hasRank(cards, 1);
+		return this.isStraightFlush(cards) &&
+				this.hasRank(cards, 13) &&
+				this.hasRank(cards, 1);
 	}
-	
+	// Implement the function of the DisplayCard interface
 	public void displayCards() {
 		dealer.displayCards();
 		System.out.println();

@@ -2,7 +2,7 @@ package poker_demo;
 
 import java.util.LinkedList;
 
-public class Player extends Person {
+public class Player extends Person implements DisplayCards {
 	final static int MAX_CARD_COUNT=5;
 	private LinkedList<Card> cardList;
 
@@ -34,10 +34,16 @@ public class Player extends Person {
 		return cardList.size();
 	}
 	
+	// Override the displayInformation of the Person class
+	public void displayInformation()
+	{
+		System.out.println("The player's name is " + this.name + 
+				", who is " + this.gender + " at age " + this.age);
+	}
+	// Implement the function of the DisplayCard interface
 	public void displayCards()
 	{
-		System.out.println("The player " + this.name + 
-				"'s cards are listed as follows (" + this.cardCount() + " in total):");
+		System.out.println("The player 's cards are listed as follows (" + this.cardCount() + " in total):");
 		for (int i=0; i<cardList.size(); i++)
 		{
 			Card card = cardList.get(i);

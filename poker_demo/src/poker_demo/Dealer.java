@@ -1,6 +1,6 @@
 package poker_demo;
 
-public class Dealer extends Person {
+public class Dealer extends Person implements DisplayCards {
 	private Deck deck = new Deck(true);
 	
 	public Dealer() {
@@ -39,9 +39,16 @@ public class Dealer extends Person {
 		deck.shuffle();
 	}
 	
+	// Override the displayInformation of the Person class	
+	public void displayInformation()
+	{
+		System.out.println("The dealer's name is " + this.name + 
+				", who is " + this.gender + " at age " + this.age);
+	}
+	
+	// Implement the function of the DisplayCard interface
 	public void displayCards() {
-		System.out.println("Dealer " + this.name + "'s cards (" + 
-							this.cardCount() + " in total):");		
+		System.out.println("Dealer's cards (" + this.cardCount() + " in total):");		
 		deck.displayCards();
 	}
 

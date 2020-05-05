@@ -2,7 +2,7 @@ package poker_demo;
 
 import java.util.LinkedList;
 
-public class Deck {
+public class Deck implements DisplayCards {
 	static int NUM_OF_CARDS = 52;
 
 	private LinkedList<Card> cardList;
@@ -37,7 +37,7 @@ public class Deck {
 	public int cardCount() {
 		return cardList.size();
 	}
-
+	// Implement the function of the DisplayCard interface
 	public void displayCards()
 	{
 		for (int i=0; i<cardList.size(); i++)

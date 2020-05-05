@@ -1,6 +1,6 @@
 package poker_demo;
 
-public class Person {
+public abstract class Person {
 	
 	public String name="";
 	public char gender='M';	// F: female, M: male
@@ -17,10 +17,9 @@ public class Person {
 		this.gender = gender;
 		this.age = age;
 	}
-	
-	public void displayCards() {
-		
-	}
+
+	// abstract method
+	public abstract void displayInformation();
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
