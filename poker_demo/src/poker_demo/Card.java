@@ -8,8 +8,8 @@ public class Card {
 			 "\u2666", // diamond
 			 "\u2663"};// spades
 	
-	int suit_id;	// index of the pattern, ranging from 0-3
-	int number;	// number of the card, ranging from 1-13
+	int suit_id;		// index of the pattern, ranging from 0-3
+	int rank_number;	// rank_number of the card, ranging from 1-13
 
 	/**
 	 * Given the suit index and the rank of a card,
@@ -31,7 +31,7 @@ public class Card {
 
 	/**
 	 * Given the file id of a card,
-	 * convert it into the corresponding number
+	 * convert it into the corresponding rank_number
 	 */
 	public static int getRank(int fid)
 	{
@@ -42,19 +42,19 @@ public class Card {
 	public Card()
 	{
 		this.suit_id = 0;
-		this.number = 0;
+		this.rank_number = 0;
 	}
 	
-	public Card(int suit_id, int number)
+	public Card(int suit_id, int rank_number)
 	{
 		this.suit_id = suit_id;
-		this.number = number;
+		this.rank_number = rank_number;
 	}
 	
 	public Card(int fid)
 	{
 		this.suit_id = Card.getSuitID(fid);
-		this.number = Card.getRank(fid);
+		this.rank_number = Card.getRank(fid);
 	}
 	
 	public String getSuit()
@@ -64,12 +64,12 @@ public class Card {
 
 	public int getRank()
 	{
-		return this.number;
+		return this.rank_number;
 	}
 	public String getRankStr()
 	{
 		String s;
-		switch (this.number)
+		switch (this.rank_number)
 		{
 		case 11:
 			s = "J";
@@ -84,7 +84,7 @@ public class Card {
 			s = "A";
 			break;
 		default:
-			s = String.valueOf(this.number);
+			s = String.valueOf(this.rank_number);
 		}
 		return s;
 	}
@@ -96,18 +96,18 @@ public class Card {
 	public static void main(String[] args)
 	{
 		String suit;
-		int suit_id, number, fid;
+		int suit_id, rank_number, fid;
 		suit_id = 3;
-		number = 13;
-		fid = Card.getFileID(suit_id, number);
+		rank_number = 13;
+		fid = Card.getFileID(suit_id, rank_number);
 		suit = Card.SUITS[suit_id];
-		System.out.println("Given pattern index: " + suit_id + suit + ", number: " + number + ", its file id: " + fid);
+		System.out.println("Given pattern index: " + suit_id + suit + ", rank_number: " + rank_number + ", its file id: " + fid);
 		
 		suit_id = Card.getSuitID(fid);
 		System.out.println("Given file id: " + fid + ", we have pid: " + suit_id);
 		
-		number = Card.getRank(fid);
-		System.out.println("Given file id: " + fid + ", we have number: " + number);
+		rank_number = Card.getRank(fid);
+		System.out.println("Given file id: " + fid + ", we have rank_number: " + rank_number);
 		
 	}
 }

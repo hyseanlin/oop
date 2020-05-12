@@ -22,7 +22,7 @@ public class JCard extends Card {
 	{
 		// Step 1: Generate a random filename, which follows
 		// the format of a poker card's filename
-		int id = Card.getFileID(suit_id, number);
+		int id = Card.getFileID(suit_id, rank_number);
     	this.cardFilename = "img/" + id + ".png";	
     	/* Step 2: Load the image from the file
 		 * according to the cardFilename */
@@ -53,13 +53,13 @@ public class JCard extends Card {
 	public JCard(int suit_id, int rank_number) throws IOException
 	{
 		super(suit_id, rank_number);
-		this.createCardImage(this.suit_id, this.number);
+		this.createCardImage(this.suit_id, this.rank_number);
 	}
 	
 	public JCard(int fid) throws IOException
 	{
 		super(Card.getSuitID(fid), Card.getRank(fid));
-		this.createCardImage(this.suit_id, this.number);
+		this.createCardImage(this.suit_id, this.rank_number);
 	}
 	
 	public JLabel getJLabel() {
