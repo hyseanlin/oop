@@ -37,7 +37,13 @@ public class Deck implements DisplayCards {
 	public int cardCount() {
 		return cardList.size();
 	}
-	// Implement the function of the DisplayCard interface
+
+	// Implement the displayJCards function of the DisplayCard interface
+	public void displayJCards()
+	{
+		
+	}
+	// Implement the displayCards function of the DisplayCard interface
 	public void displayCards()
 	{
 		for (int i=0; i<cardList.size(); i++)

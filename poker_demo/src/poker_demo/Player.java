@@ -40,7 +40,12 @@ public class Player extends Person implements DisplayCards {
 		System.out.println("The player's name is " + this.name + 
 				", who is " + this.gender + " at age " + this.age);
 	}
-	// Implement the function of the DisplayCard interface
+	// Implement the displayJCards function of the DisplayCard interface
+	public void displayJCards()
+	{
+		
+	}
+	// Implement the displayCards function of the DisplayCard interface
 	public void displayCards()
 	{
 		System.out.println("The player 's cards are listed as follows (" + this.cardCount() + " in total):");

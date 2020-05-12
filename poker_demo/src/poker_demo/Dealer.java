@@ -45,8 +45,14 @@ public class Dealer extends Person implements DisplayCards {
 		System.out.println("The dealer's name is " + this.name + 
 				", who is " + this.gender + " at age " + this.age);
 	}
+
+	// Implement the displayJCards function of the DisplayCard interface
+	public void displayJCards()
+	{
+		
+	}
 	
-	// Implement the function of the DisplayCard interface
+	// Implement the displayCardds function of the DisplayCard interface
 	public void displayCards() {
 		System.out.println("Dealer's cards (" + this.cardCount() + " in total):");		
 		deck.displayCards();

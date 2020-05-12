@@ -114,4 +114,5 @@ public class Card {
 
 interface DisplayCards {
 	public void displayCards();
+	public void displayJCards();
 }

@@ -158,7 +158,13 @@ public class ShowHandGame implements DisplayCards {
 				this.hasRank(cards, 13) &&
 				this.hasRank(cards, 1);
 	}
-	// Implement the function of the DisplayCard interface
+
+	// Implement the displayJCards function of the DisplayCard interface
+	public void displayJCards()
+	{
+		
+	}
+	// Implement the displayCards function of the DisplayCard interface
 	public void displayCards() {
 		dealer.displayCards();
 		System.out.println();
