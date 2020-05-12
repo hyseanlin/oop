@@ -49,7 +49,7 @@ public class Dealer extends Person implements DisplayCards {
 	// Implement the displayJCards function of the DisplayCard interface
 	public void displayJCards()
 	{
-		
+		this.deck.displayJCards();
 	}
 	
 	// Implement the displayCardds function of the DisplayCard interface
@@ -79,6 +79,7 @@ public class Dealer extends Person implements DisplayCards {
 		p2.displayCards();
 		d.displayCards();
 
+		d.displayJCards();
 	}
 
 }

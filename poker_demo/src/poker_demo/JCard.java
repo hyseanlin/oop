@@ -16,7 +16,7 @@ public class JCard extends Card {
 	BufferedImage cardImage=null; 	// image information of a card
 	int cardImageHeight=0;			// Height of a card image
 	int cardImageWidth=0;			// Width of a card image
-	JLabel cardLabel=new JLabel();;			// JLabel representation of a card
+	JLabel cardLabel=new JLabel();			// JLabel representation of a card
 
 	private void createCardImage(int suit_id, int rank_number) throws IOException
 	{
@@ -59,6 +59,12 @@ public class JCard extends Card {
 	public JCard(int fid) throws IOException
 	{
 		super(Card.getSuitID(fid), Card.getRank(fid));
+		this.createCardImage(this.suit_id, this.rank_number);
+	}
+	
+	public JCard(Card card) throws IOException
+	{
+		super(card.getSuitID(), card.getRank());
 		this.createCardImage(this.suit_id, this.rank_number);
 	}
 	
