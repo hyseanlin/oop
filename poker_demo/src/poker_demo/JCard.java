@@ -17,13 +17,13 @@ public class JCard extends Card {
 	int cardImageHeight=0;			// Height of a card image
 	int cardImageWidth=0;			// Width of a card image
 	JLabel cardLabel=new JLabel();			// JLabel representation of a card
-
+ 
 	private void createCardImage(int suit_id, int rank_number) throws IOException
 	{
 		// Step 1: Generate a random filename, which follows
 		// the format of a poker card's filename
 		int id = Card.getFileID(suit_id, rank_number);
-    	this.cardFilename = "img/" + id + ".png";	
+    	this.cardFilename = "img/" + id + ".jpg";	
     	/* Step 2: Load the image from the file
 		 * according to the cardFilename */
      	// create a File object

@@ -162,7 +162,12 @@ public class ShowHandGame implements DisplayCards {
 	// Implement the displayJCards function of the DisplayCard interface
 	public void displayJCards()
 	{
-		
+		dealer.displayJCards();
+
+		for (int i=0; i<NUM_OF_PLAYERS; i++)
+		{
+			players[i].displayJCards();
+		}
 	}
 	// Implement the displayCards function of the DisplayCard interface
 	public void displayCards() {
@@ -225,11 +230,11 @@ public class ShowHandGame implements DisplayCards {
 	
 	public static void main(String[] args) {
 		ShowHandGame myGame = new ShowHandGame();
-		//myGame.start();
-		//myGame.displayCards();
+		myGame.start();
+		myGame.displayJCards();
 		//myGame.showdown();
 		
-		
+		/*
 		Dealer d = new Dealer();
 		Player p = new Player("Tester", 'M', 42);
 		d.shuffle();			
@@ -250,7 +255,7 @@ public class ShowHandGame implements DisplayCards {
 		}
 		p.displayCards();
 		myGame.displayResult(p.showHand());
-
+		 */
 	}
 
 }
